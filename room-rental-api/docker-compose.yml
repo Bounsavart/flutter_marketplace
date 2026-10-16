@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: room_rental
+    ports:
+      - "3306:3306"
+    volumes:
+      - room_rental_mysql:/var/lib/mysql
+
+volumes:
+  room_rental_mysql:
